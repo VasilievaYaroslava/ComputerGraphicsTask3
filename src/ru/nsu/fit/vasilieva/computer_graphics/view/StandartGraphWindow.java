@@ -19,7 +19,7 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
 import ru.nsu.fit.vasilieva.computer_graphics.enums.ZoomType;
-import ru.nsu.fit.vasilieva.computer_graphics.task2specific.MenuController;
+import ru.nsu.fit.vasilieva.computer_graphics.graphs_specific.MenuController;
 
 public class StandartGraphWindow extends JFrame
 {
@@ -284,11 +284,13 @@ public class StandartGraphWindow extends JFrame
 			}
 			
 			@Override
-			public void mouseReleased(MouseEvent e) 
+			public void mouseDragged(MouseEvent e)
 			{
 				controller.movePosition(mouseCoordinateX - e.getX(), mouseCoordinateY - e.getY());
+				mouseCoordinateX = e.getX();
+				mouseCoordinateY = e.getY();
 			}
-			
+
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent arg0) 
 			{
@@ -310,6 +312,7 @@ public class StandartGraphWindow extends JFrame
 		};
 		panel.addMouseWheelListener(adapter);
 		panel.addMouseListener(adapter);
+		panel.addMouseMotionListener(adapter);
 
 	}
 	

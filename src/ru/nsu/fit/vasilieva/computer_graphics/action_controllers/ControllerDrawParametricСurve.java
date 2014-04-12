@@ -151,6 +151,7 @@ public class ControllerDrawParametricСurve extends ControllerDrawCoordinateLine
 			}
 		}
 		
+		
 		return limits;
 	}
 	
@@ -191,10 +192,13 @@ public class ControllerDrawParametricСurve extends ControllerDrawCoordinateLine
 			return;
 		}
 		double root = Math.sqrt(value / (value - 1));
+		System.out.println("roo" + -root);
+
 		if ((strictLeft && (root > leftLimit)) || (!strictLeft && (root >= leftLimit)))
 		{
 			if ((strictRight && (root < rightLimit)) || (!strictRight && (root <= rightLimit))) 
 			{
+				System.out.println("roo" + -root);
 				roots.add(new Double(root));
 			}
 		}
@@ -202,6 +206,7 @@ public class ControllerDrawParametricСurve extends ControllerDrawCoordinateLine
 		{
 			if ((strictRight && (-root < rightLimit)) || (!strictRight && (-root <= rightLimit))) 
 			{
+				System.out.println("roo" + -root);
 				roots.add(new Double(-root));
 			}
 		}
@@ -217,6 +222,8 @@ public class ControllerDrawParametricСurve extends ControllerDrawCoordinateLine
 		if (D == 0)
 		{
 			double root = value / 2;
+			System.out.println("roo" + -root);
+
 			if ((strictLeft && (root > leftLimit)) || (!strictLeft && (root >= leftLimit)))
 			{
 				if ((strictRight && (root < rightLimit)) || (!strictRight && (root <= rightLimit))) 
@@ -227,6 +234,8 @@ public class ControllerDrawParametricСurve extends ControllerDrawCoordinateLine
 			return;
 		}
 		double root = (value + Math.sqrt(D)) / 2;
+		System.out.println("roo" + -root);
+
 		if ((strictLeft && (root > leftLimit)) || (!strictLeft && (root >= leftLimit)))
 		{
 			if ((strictRight && (root < rightLimit)) || (!strictRight && (root <= rightLimit))) 

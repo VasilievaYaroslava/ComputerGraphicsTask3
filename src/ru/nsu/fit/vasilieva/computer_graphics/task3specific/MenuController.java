@@ -6,7 +6,7 @@ import ru.nsu.fit.vasilieva.computer_graphics.action_controllers.ControllerDrawL
 import ru.nsu.fit.vasilieva.computer_graphics.action_controllers.Drawable;
 import ru.nsu.fit.vasilieva.computer_graphics.view.DrawableBufferedImage;
 
-public class MenuController extends ru.nsu.fit.vasilieva.computer_graphics.task2specific.MenuController 
+public class MenuController extends ru.nsu.fit.vasilieva.computer_graphics.graphs_specific.MenuController 
 {
 	private int NEW_DEFAULT_LENGTH = 18;
 	private ControllerDrawLemniscateOfBernoulli controller;
